@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# Ranorex Studio 7.2
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{B72ADD4B-EDC1-44BB-8404-0ADC07A7615A}"
+	ProjectSection(SolutionItems) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpointAutomationHelper", "EpointAutomationHelper.csproj", "{DA96F36E-AF61-4022-8B92-A1F65DB5B157}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EpointAutomationHelper.Tests", "EpointAutomationHelper.Tests\EpointAutomationHelper.Tests.csproj", "{0CF4F382-6E39-45CC-B6B5-1592B6A10273}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA96F36E-AF61-4022-8B92-A1F65DB5B157}.Debug|x86.Build.0 = Debug|Any CPU
+		{DA96F36E-AF61-4022-8B92-A1F65DB5B157}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{DA96F36E-AF61-4022-8B92-A1F65DB5B157}.Release|x86.Build.0 = Release|Any CPU
+		{DA96F36E-AF61-4022-8B92-A1F65DB5B157}.Release|x86.ActiveCfg = Release|Any CPU
+		{0CF4F382-6E39-45CC-B6B5-1592B6A10273}.Debug|x86.Build.0 = Debug|x86
+		{0CF4F382-6E39-45CC-B6B5-1592B6A10273}.Debug|x86.ActiveCfg = Debug|x86
+		{0CF4F382-6E39-45CC-B6B5-1592B6A10273}.Release|x86.Build.0 = Release|x86
+		{0CF4F382-6E39-45CC-B6B5-1592B6A10273}.Release|x86.ActiveCfg = Release|x86
+	EndGlobalSection
+EndGlobal

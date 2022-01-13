@@ -1,0 +1,21 @@
+﻿<repository
+id="41a53184-1322-4cc8-97f8-84d6243e9e47"
+name="TestsRepository"
+rxversion="7.2">
+	<codegen
+	classname="TestsRepository"
+	namespace="EpointAutomationHelper.Tests">
+	</codegen>
+	<rootfolder
+	capname="unknown"
+	id="fefe4d66-76e4-4899-b068-5f599272fb79"
+	isrooted="True"
+	name="Root"
+	searchtimeout="0ms"
+	usecache="True">
+		<basepath>
+		</basepath>
+	</rootfolder>
+	<variables>
+	</variables>
+</repository>

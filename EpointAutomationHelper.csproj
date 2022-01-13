@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{DA96F36E-AF61-4022-8B92-A1F65DB5B157}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <OutputType>Library</OutputType>
+    <RootNamespace>EpointAutomationHelper</RootNamespace>
+    <AssemblyName>EpointAutomationHelper</AssemblyName>
+    <RanorexVersion>7.2</RanorexVersion>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+    <NoWin32Manifest>False</NoWin32Manifest>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <AllowUnsafeBlocks>False</AllowUnsafeBlocks>
+    <NoStdLib>False</NoStdLib>
+    <DocumentationFile>bin\Debug\EpointAutomationHelper.xml</DocumentationFile>
+    <TreatWarningsAsErrors>False</TreatWarningsAsErrors>
+    <IntermediateOutputPath>obj\$(Configuration)\</IntermediateOutputPath>
+    <WarningLevel>4</WarningLevel>
+    <RANOREX_BIN_PATH Condition=" '$(RANOREX_BIN_PATH)' == '' ">$([MSBuild]::GetRegistryValueFromView('HKEY_LOCAL_MACHINE\SOFTWARE\Ranorex\Studio', 'InstallDir', null, RegistryView.Registry64, RegistryView.Registry32))\Bin</RANOREX_BIN_PATH>
+    <RanorexTargetsPath>$(RANOREX_BIN_PATH)\Ranorex.MSBuild.Targets</RanorexTargetsPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <DebugSymbols>True</DebugSymbols>
+    <DebugType>Full</DebugType>
+    <Optimize>False</Optimize>
+    <CheckForOverflowUnderflow>True</CheckForOverflowUnderflow>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <BaseIntermediateOutputPath>obj\</BaseIntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <DebugSymbols>False</DebugSymbols>
+    <DebugType>None</DebugType>
+    <Optimize>True</Optimize>
+    <CheckForOverflowUnderflow>False</CheckForOverflowUnderflow>
+    <DefineConstants>TRACE</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Platform)' == 'AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <BaseAddress>4194304</BaseAddress>
+    <RegisterForComInterop>False</RegisterForComInterop>
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+    <FileAlignment>4096</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.Targets" />
+  <ItemGroup>
+    <Reference Include="BumpKit">
+      <HintPath>DllImport\BumpKit.dll</HintPath>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>DllImport\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="LibGit2Sharp">
+      <HintPath>DllImport\LibGit2Sharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data">
+      <HintPath>DllImport\MySql.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>DllImport\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllImport\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllImport\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.2.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DllImport\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="Ranorex.Bootstrapper">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Core.Resolver">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Cef">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.ChromeWeb">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Delphi">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.FirefoxWeb">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Flex">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Java">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Mobile">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Msaa">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Office">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Qt">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.RawText">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Sap">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Uia">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Web">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.WebDriver">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Win32">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.WinForms">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.WinForms.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Wpf">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Ranorex.Plugin.Wpf.Core">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="YamlDotNet">
+      <HintPath>DllImport\YamlDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccessHelper.cs">
+      <id>6244bd41-889c-4ab7-b6ac-bbe04923225e</id>
+    </Compile>
+    <Compile Include="IDNumGen.cs">
+      <id>67818c47-d49c-4157-b3f5-63141dbb624d</id>
+    </Compile>
+    <Compile Include="AssemblyInfo.cs">
+      <id>9bb0b548-f48e-4973-8047-b86434a21739</id>
+    </Compile>
+    <Compile Include="CaKeyHelper.cs">
+      <id>570937ee-fa82-42f4-8c7c-485e48bcac80</id>
+    </Compile>
+    <Compile Include="CmdHelper.cs">
+      <id>722f2165-f3dd-423c-84be-61501511615a</id>
+    </Compile>
+    <Compile Include="Constant.cs">
+      <id>9c57a0eb-bbfa-443b-90df-129bff77f242</id>
+    </Compile>
+    <Compile Include="FakeDataHelper.cs">
+      <id>8011b6f4-a20d-4ad0-bf00-b1688ab24a72</id>
+    </Compile>
+    <Compile Include="FileDialogHelper.cs">
+      <id>8cc8e78f-0e88-4730-b7e6-f059d5ed9d65</id>
+    </Compile>
+    <Compile Include="FileIOHelper.cs">
+      <id>9518de5e-ab25-44b4-9904-037da210a953</id>
+    </Compile>
+    <Compile Include="FtpHelper.cs">
+      <id>8325e7a4-bd33-4a29-846d-3c5221c0176d</id>
+    </Compile>
+    <Compile Include="GenActionYml.cs">
+      <id>2ac02be3-5796-4cf2-a333-56ce3810d166</id>
+    </Compile>
+    <Compile Include="GitOperation.cs">
+      <id>32b946ed-705c-4892-8bd1-e444b6f7e471</id>
+    </Compile>
+    <Compile Include="HashHelper.cs">
+      <id>bb51bb22-23b8-48b2-a694-f8923a03e97f</id>
+    </Compile>
+    <Compile Include="ImageHelper.cs">
+      <id>53395175-8afc-4888-bfaf-a956950fcf2b</id>
+    </Compile>
+    <Compile Include="PopupWatcherLibrary.cs">
+      <id>e2eb6359-c704-46c7-a681-1c049c564a00</id>
+    </Compile>
+    <Compile Include="RegistryHelper.cs">
+      <id>5f757b0d-8637-4563-8dd1-e594aa5428df</id>
+    </Compile>
+    <Compile Include="SqlOperationHelper.cs">
+      <id>921bed78-b084-4932-8965-d642e574a150</id>
+    </Compile>
+    <Compile Include="UserCodeModule\CheckTestStatus.cs">
+      <id>568a0fc5-92bf-4484-9bbb-bdd2c1370331</id>
+    </Compile>
+    <Compile Include="DirHelper.cs">
+      <id>ee74a02b-6611-45e2-a637-e929b6b2978e</id>
+    </Compile>
+    <Compile Include="UserCodeModule\SendEmail.cs">
+      <id>7f24c558-72d2-4977-9487-f6ce2f0771fd</id>
+    </Compile>
+    <Compile Include="UserCodeModule\SendEmailByTravisCI.cs">
+      <id>b33b7c5e-22a2-49ca-bf99-984731f92c75</id>
+    </Compile>
+    <Compile Include="JsonHelper.cs">
+      <id>fce81237-a114-404c-9929-0c21cbd3eeae</id>
+    </Compile>
+    <Compile Include="ExcelHelper.cs">
+      <id>2888c05c-a78e-466e-8ba2-e7a61522e81a</id>
+    </Compile>
+    <Compile Include="OpenFileOperation.cs">
+      <id>13ad2f66-2495-452d-816f-4c64b1aa1e05</id>
+    </Compile>
+    <Compile Include="ReportHelper.cs">
+      <id>109c8e57-2169-4264-abd9-185c56d7c983</id>
+    </Compile>
+    <Compile Include="UserCodeModule\StartScreenshot.cs">
+      <id>b403b2fb-8fba-429c-8f7c-3fee9216e87a</id>
+    </Compile>
+    <Compile Include="ValidateHelper.cs">
+      <id>6690dda2-4b36-42ac-920b-25dd4d15d400</id>
+    </Compile>
+    <Compile Include="XmlHelper.cs">
+      <id>4aab9a7c-bb67-4ae9-a463-a0f35674e476</id>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Wyam">
+      <Version>1.7.4</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(RanorexTargetsPath)" Condition="Exists('$(RanorexTargetsPath)')" />
+</Project>

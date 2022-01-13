@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<EmailData>
+	<!--支持多邮箱接收，使用英文逗号隔开-->
+	<Item name = "收件箱" value ="baiduvip_crack@yeah.net,taylortaurus0517@gmail.com"/>
+	<!--防止邮件被拦截，可以在收件箱配置多个接收邮箱，并将下面的值置为true-->
+	<Item name = "是否随机挑选接收邮箱" value ="true"/>
+</EmailData>
