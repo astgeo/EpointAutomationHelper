@@ -4,7 +4,7 @@
 Settings[Keys.Host] = "host.com";
 Settings[DocsKeys.Title] = "EpointAutomationHelper";
 Settings[DocsKeys.SourceFiles] = @"/home/runner/work/EpointAutomationHelper/EpointAutomationHelper/*.cs"; // 此路径为linux虚拟机上绝对路径，本地使用时需更改
-Settings[DocsKeys.ValidateRelativeLinks] = true；
+Settings[DocsKeys.ValidateRelativeLinks] = true;
 Settings[DocsKeys.IncludeDateInPostPath] = true;
 Settings[Keys.LinkHideExtensions] = false;
 Settings[Keys.LinkRoot] = "/EpointAutomationHelper"; // 本地仓库使用时，不加这句
