@@ -18,7 +18,7 @@ jobs:
       - name: Setup .NET # 步骤2
         uses: actions/setup-dotnet@v1 # 作用：安装dotnet
         with:
-          dotnet-version: 4.6.2 # 版本
+          dotnet-version: 5.0.x # 版本
       - name: Build and Deploy # 步骤3 （只提交到github可以使用这个步骤）
         uses: JamesIves/github-pages-deploy-action@releases/v2 # 作用：将项目构建和部署到github。 https://github.com/JamesIves/github-pages-deploy-action
         env: # 设置环境变量
