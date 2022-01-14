@@ -20,7 +20,7 @@ jobs:
         with:
           dotnet-version: 5.0.x # 版本
       - name: Build # 步骤3
-        run: dotnet tool install -g Wyam.Tool && wyam new -r Docs && wyam -r Docs
+        run: dotnet tool install -g Wyam.Tool
       - name: Deploy # 步骤4 
         uses: JamesIves/github-pages-deploy-action@releases/v2 # 作用：将项目构建和部署到github。 https://github.com/JamesIves/github-pages-deploy-action
         env: # 设置环境变量
