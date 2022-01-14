@@ -18,7 +18,7 @@ jobs:
       - name: Setup .NET # 步骤2
         uses: actions/setup-dotnet@v1 # 作用：安装dotnet
         with:
-          dotnet-version: 5.0.x # 版本
+          dotnet-version: 2.2.x # 版本
       - name: Build # 步骤3
         run: dotnet tool install -g Wyam.Tool && wyam new -r Docs
       - name: Deploy # 步骤4 
