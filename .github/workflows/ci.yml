@@ -20,7 +20,7 @@ jobs:
         with:
           dotnet-version: 5.0.x # 版本
       - name: test dotnet
-        run: dotnet test
+        run: dotnet tool install -g Wyam.Tool
       - name: Build and Deploy # 步骤3 
         uses: JamesIves/github-pages-deploy-action@releases/v2 # 作用：将项目构建和部署到github。 https://github.com/JamesIves/github-pages-deploy-action
         env: # 设置环境变量
@@ -28,4 +28,4 @@ jobs:
           BASE_BRANCH: master # 要部署的文件夹所在的分支
           BRANCH: gh-pages # 部署到的分支
           FOLDER: output # 要部署的文件夹
-          BUILD_SCRIPT: dotnet tool install -g Wyam.Tool && wyam new -r Docs && wyam -r Docs && cd output echo 'astgeo.github.io/EpointAutomationHelper/' > CNAME && cd - # 部署前要执行的命令（记得cd进入某个目录后，后面要cd -退回开始的目录）
+          BUILD_SCRIPT: wyam new -r Docs && wyam -r Docs && cd output echo 'astgeo.github.io/EpointAutomationHelper/' > CNAME && cd - # 部署前要执行的命令（记得cd进入某个目录后，后面要cd -退回开始的目录）
