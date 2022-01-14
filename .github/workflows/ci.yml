@@ -19,6 +19,8 @@ jobs:
         uses: actions/setup-dotnet@v1 # 作用：安装dotnet
         with:
           dotnet-version: 5.0.x # 版本
+      - name: test dotnet
+        run: dotnet build
       - name: Build and Deploy # 步骤3 
         uses: JamesIves/github-pages-deploy-action@releases/v2 # 作用：将项目构建和部署到github。 https://github.com/JamesIves/github-pages-deploy-action
         env: # 设置环境变量
