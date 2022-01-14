@@ -19,13 +19,12 @@ jobs:
         uses: actions/setup-dotnet@v1 # 作用：安装dotnet
         with:
           dotnet-version: 5.0.x # 版本
-      - name: test dotnet
-        run: dotnet tool install -g Wyam.Tool
-      - name: Build and Deploy # 步骤3 
+      - name: Build # 步骤3
+        run: dotnet tool install -g Wyam.Tool && wyam new -r Docs && wyam -r Docs
+      - name: Deploy # 步骤4 
         uses: JamesIves/github-pages-deploy-action@releases/v2 # 作用：将项目构建和部署到github。 https://github.com/JamesIves/github-pages-deploy-action
         env: # 设置环境变量
-          ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }} # toKen私密变量
           BASE_BRANCH: master # 要部署的文件夹所在的分支
           BRANCH: gh-pages # 部署到的分支
           FOLDER: output # 要部署的文件夹
-          BUILD_SCRIPT: npm install && wyam new -r Docs && wyam -r Docs && cd output echo 'astgeo.github.io/EpointAutomationHelper/' > CNAME && cd - # 部署前要执行的命令（记得cd进入某个目录后，后面要cd -退回开始的目录）
+          BUILD_SCRIPT: cd output echo 'astgeo.github.io/EpointAutomationHelper/' > CNAME && cd - # 部署前要执行的命令（记得cd进入某个目录后，后面要cd -退回开始的目录）
